@@ -176,7 +176,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-09-05 21:46:08" itemprop="dateModified" datetime="2025-09-05T21:46:08+08:00">2025-09-05</time>
+                <time title="Modified: 2025-09-08 21:20:13" itemprop="dateModified" datetime="2025-09-08T21:20:13+08:00">2025-09-08</time>
               </span>
 
           
@@ -191,8 +191,8 @@
 
       
           <h1 id="如何搭建个人博客？"><a href="#如何搭建个人博客？" class="headerlink" title="如何搭建个人博客？"></a>如何搭建个人博客？</h1><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ol>
-<li>下载并安装Node.js</li>
-<li>下载并安装Git</li>
+<li>下载并安装Node.js<br><a target="_blank" rel="noopener" href="https://nodejs.org/en/" title="Node.js英文版下载链接">Node.js下载链接</a></li>
+<li>下载并安装Git<br><a target="_blank" rel="noopener" href="https://git-scm.com/downloads" title="Git下载链接">Git下载链接</a></li>
 <li>注册GitHub账号</li>
 <li>安装Hexo（windows+R打开cmd）</li>
 </ol>
@@ -207,9 +207,31 @@
 <p>*备注：如果第三步 hexo init myblog 成功，最后会显示类似这样的内容:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  Install dependencies done, now run &quot;npm install&quot; manually if needed.</span><br><span class="line">INFO  Start blogging with Hexo! </span><br></pre></td></tr></table></figure>
 <ol start="6">
-<li>然后在浏览器中输入 localhost:4000 , 就能看到，我们的博客就初步搭建成功啦！<br><img src="/2025/08/30/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/2.png"></li>
+<li><p>然后在浏览器中输入 localhost:4000 , 就能看到，我们的博客就初步搭建成功啦！<br><img src="/2025/08/30/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/2.png"></p>
+</li>
+<li><p>接下来，我们需要配置一下博客的基本信息，编辑 _config.yml 文件</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title: 我的博客 # 博客标题</span><br><span class="line">subtitle: 记录生活和学习 # 博客副标题</span><br><span class="line">description: 这是我的个人博客，用于记录生活和学习。 # 博客描述</span><br><span class="line">author: LuisAnna # 博客作者</span><br><span class="line">language: zh-CN # 博客默认语言</span><br><span class="line">timezone: Asia/Shanghai # 博客时区</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li>编辑主题</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes # 进入主题文件夹</span><br><span class="line">git clone https://github.com/volantis-x/hexo-theme-volantis.git # 下载主题</span><br></pre></td></tr></table></figure>
+<ol start="9">
+<li>编辑文章</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;文章标题&quot; # 创建新文章</span><br></pre></td></tr></table></figure>
+<ol start="10">
+<li>部署博客到GitHub Pages</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy # 部署博客到GitHub Pages</span><br></pre></td></tr></table></figure>
+<ol start="11">
+<li>完成！</li>
+<li>访问 http:&#x2F;&#x2F;你的GitHub用户名.github.io&#x2F;你的仓库名&#x2F; 就可以看到你的博客啦！</li>
 </ol>
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  # 清除缓存</span><br><span class="line">hexo generate # 生成静态页面</span><br><span class="line">hexo server # 启动本地服务器，预览博客效果</span><br><span class="line">hexo deploy # 部署博客到GitHub Pages</span><br><span class="line">hexo new &quot;postName&quot; # 创建新文章</span><br></pre></td></tr></table></figure>
+<h2 id="在hexo中插入图片"><a href="#在hexo中插入图片" class="headerlink" title="在hexo中插入图片"></a>在hexo中插入图片</h2><p>先在 config.yml 里把 post_asset_folder 设置成 true<br>这样在建立文件时，Hexo 会自动建立一个与文章同名的文件夹<br><img src="/2025/08/30/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/3.png"></p>
+
       
     </div>
 
